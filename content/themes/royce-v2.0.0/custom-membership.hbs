@@ -1,0 +1,33 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The content area on the static page --}}
+<main id="main" class="site-main">
+
+	{{!-- Everything inside the #post tags pulls data from the post --}}
+	{{#post}}
+	<article class="{{post_class}} site-membership inner">
+
+		<header class="page-header">
+			<h1 class="page-title underline">{{title}}</h1>
+		</header><!-- .post-header -->
+
+		<div class="page-content">
+			{{#if custom_excerpt}}
+			<p class="intro">{{custom_excerpt}}</p>
+			{{/if}}
+			<div class="membership-box">
+				<h2 class="membership-box-title">{{t "Choose your subscription"}}</h2>
+				<div class="membership-plans">
+					{{> "membership-free"}}
+					{{> "membership-monthly"}}
+					{{> "membership-yearly"}}
+				</div><!-- membership-box-inside -->
+			</div><!-- membership-box -->
+			{{content}}
+		</div><!-- .post-content -->
+
+	</article><!-- .site-membership -->
+	{{/post}}
+
+</main><!-- .site-main -->

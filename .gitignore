@@ -1,0 +1,11 @@
+/debug
+/deploy
+/config
+/build/labtools/tmp
+/node_modules
+
+**/*.csv
+
+.sublime-project
+.DS_Store
+/build/settings*.sh

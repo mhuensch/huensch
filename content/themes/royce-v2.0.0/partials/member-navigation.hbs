@@ -1,0 +1,10 @@
+{{!-- Members menu --}}
+<ul class="members-menu">
+	{{#if @member}}
+	<li class="signout-link"><a class="button outlined" href="#signout" data-members-signout>{{t "Sign out"}}</a></li>
+	<li class="account-link"><a href="{{@site.url}}/account/">{{t "View Account"}}</a></li>
+	{{else}}
+	<li class="signin-link"><a class="button outlined" href="{{@site.url}}/signin/">{{t "Sign in"}}</a></li>
+	<li class="signup-link">{{t "Need an account?"}} <a href="{{@site.url}}/signup/">{{t "Sign up"}}</a></li>
+	{{/if}}
+</ul><!-- .memebers-menu -->

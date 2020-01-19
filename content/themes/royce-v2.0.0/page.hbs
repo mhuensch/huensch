@@ -1,0 +1,74 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The content area on the static page --}}
+<main id="main" class="site-main">
+
+	{{!-- Everything inside the #post tags pulls data from the post --}}
+	{{#post}}
+
+	<article class="{{post_class}} post-full inner">
+
+		<header class="post-header">
+			<h1 class="post-title underline">{{title}}</h1>
+			{{#if tags}}
+			<div class="post-tags">{{tags separator=" "}}</div>
+			{{/if}}
+		</header><!-- .post-header -->
+
+		{{#if feature_image}}
+		<div class="post-thumbnail">
+			<img srcset="{{img_url feature_image size="xs"}} 300w, {{img_url feature_image size="s"}} 600w, {{img_url feature_image size="m"}} 800w, {{img_url feature_image size="l"}} 1100w, {{img_url feature_image size="xl"}} 1600w" sizes="(max-width: 800px) 94vw, (max-width: 1000px) 64vw, (max-width: 1468px) calc(94vw - 300px), 1100px" src="{{img_url feature_image size="l"}}" alt="{{title}}" />
+		</div>
+		{{/if}}
+
+		{{!-- If the user has access, show post content --}}
+		{{#if access}}
+
+		<div class="post-content">
+			{{content}}
+		</div><!-- .post-content -->
+
+		{{/if}}
+
+	</article><!-- .post -->
+
+	{{#if access}}
+
+		{{!-- If this is a public post, show subscribe --}}
+		{{#unless @member}}
+			{{> "subscribe-box"}}
+		{{/unless}}
+
+	{{else}}
+
+		<section class="subscribe-box inner {{visibility}}">
+
+			{{!-- If it's a post for paying subscribers, show upgrade or sign up --}}
+			<div class="subscribe-box-paid">
+				<h2 class="subscribe-box-title">{{t "This post is for paying subscribers only"}}</h2>
+				{{#if @member}}
+				<p>{{t "Upgrade your account to keep reading this post and get access to the full library of posts for paying subscribers only."}}</p>
+				<p><a class="button" href="{{@site.url}}/account/">{{t "View subscribe options"}}</a></p>
+				{{else}}
+				<p>{{t "Sign up and upgrade your account to get access to the full library of posts for paying subscribers only."}}</p>
+				{{> "member-signup-form"}}
+				<p class="note">{{t "Already have an account?"}} <a href="{{@site.url}}/signin/">{{t "Sign in"}}</a></p>
+				{{/if}}
+			</div><!-- .subscribe-box-paid -->
+
+			{{!-- If it's a post for subscribers, show sign up --}}
+			<div class="subscribe-box-members">
+				<h2 class="subscribe-box-title">{{t "This post is for subscribers only"}}</h2>
+				<p>{{t "Sign up now to get access to the full library of posts for subscribers only."}}</p>
+				{{> "member-signup-form"}}
+				<p class="note">{{t "Already have an account?"}} <a href="{{@site.url}}/signin/">{{t "Sign in"}}</a></p>
+			</div><!-- .subscribe-box-members -->
+
+		</section><!-- .subscribe-box -->
+
+	{{/if}}
+
+	{{/post}}
+
+</main><!-- .site-main -->
