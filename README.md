@@ -32,23 +32,9 @@ ghost stop
 npm install ghost-cli@latest -g
 ```
 
-1. Point the ghost config at this folder
-```
-open -t ~/.ghost/config
-```
-Add or edit an entry to include this folder.  For instance
-``` JSON
-{
-  "instances": {
-    "ghost-local": {
-      "cwd": "/Users/someuser/another instance"
-    },
-    "ghost-local-1": {
-      "cwd": "/Users/someuser/huensch"
-    }
-  }
-}
-```
+wget -r -nH -P docs -E -T 2 -np -k http://localhost:2368/
+
+
 
 
 ## References

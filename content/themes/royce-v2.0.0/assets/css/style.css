@@ -337,7 +337,7 @@ pre {
 :not(pre) > code {
   color: #666;
 }
-
+/* 
 blockquote {
   color: #fff;
   font-family: "Crimson Text", serif;
@@ -379,6 +379,13 @@ blockquote cite {
   font-weight: normal;
   line-height: 1.66667;
   margin-top: 1em;
+} */
+
+blockquote {
+  border-left: 1px solid #d4a259;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  color: #999;
 }
 
 dl {
@@ -764,7 +771,7 @@ img {
 }
 
 @media only screen and (min-width: 1086px) {
-  blockquote,
+  /* blockquote, */
   .kg-gallery-card {
     margin-left: calc(510px - 47vw);
     margin-right: calc(510px - 47vw);
@@ -782,7 +789,7 @@ img {
   }
 }
 @media only screen and (min-width: 1469px) {
-  blockquote,
+  /* blockquote, */
   .kg-gallery-card {
     margin-left: -180px;
     margin-right: -180px;
@@ -1025,8 +1032,7 @@ img {
     font-size: 1.875rem;
   }
 
-  h2,
-  blockquote {
+  h2 {
     font-size: 1.5rem;
   }
 
@@ -1516,7 +1522,7 @@ a[href$="/rss/"] svg {
 .post-full .post-tags {
   margin-top: 2.14285em;
 }
-.post-full:not(.post-custom) .post-content > p:first-child:first-letter {
+/* .post-full:not(.post-custom) .post-content > p:first-child:first-letter {
   color: #fff;
   font-weight: 400;
   font-size: 72px;
@@ -1527,7 +1533,7 @@ a[href$="/rss/"] svg {
   position: relative;
   text-transform: uppercase;
   vertical-align: bottom;
-}
+} */
 @media only screen and (max-width: 800px) {
   .post-full .post-title {
     font-size: 2.22222rem;
@@ -1537,17 +1543,18 @@ a[href$="/rss/"] svg {
   .post-full .post-title {
     font-size: 1.875rem;
   }
-  .post-full:not(.post-custom) .post-content > p:first-child:first-letter {
+  /* .post-full:not(.post-custom) .post-content > p:first-child:first-letter {
     font-size: 60px;
     margin-right: 10px;
-  }
+  } */
 }
 
-@-moz-document url-prefix() {
+/* @-moz-document url-prefix() {
   .post-full:not(.post-custom) .post-content > p:first-child:first-letter {
     padding-top: 0.08em;
   }
-}
+} */
+
 /* Hero section */
 .hero {
   margin-bottom: 2.5em;
