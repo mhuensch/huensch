@@ -3445,10 +3445,11 @@ form[data-members-form] .message-success {
 }
 
 .tag-card {
-  background-color: #f8f8f8;
-  background-color: var(--bg-light-gray);
+  /* background-color: #f8f8f8;
+  background-color: var(--bg-light-gray); */
   border: 1px solid #f0f0f0;
   border: 1px solid var(--light-border-gray);
+  border-color: #ffd700;
   position: relative;
   overflow: hidden;
   min-height: 200px;
@@ -3513,6 +3514,7 @@ form[data-members-form] .message-success {
   font-size: 0.875rem;
   letter-spacing: 0.6px;
   transition: all 0.3s ease-in-out;
+  color: #fff;
 }
 
 .tag-card-inner {
