@@ -1,0 +1,134 @@
+Topics
+------
+Your Computer Science Degree will FAIL you.
+Making mistakes is IMPORTANT - you learn best through failure
+Stick with the fundamentals before you start doing anything complex (complexity is fundamentals combined)
+Data, Logic, Utility (Code Structures)
+Stop (over) using Polymorphism (Taggable Thing Tag Tag)
+Stop using code libraries (They fail - 8 lines of code)
+Stop writing unit tests (They aren't worth it)
+Stop injecting code (The evils of DI)
+Stop writing comments (at least pointless)
+Stop building containers (Cloud Hosing)
+Stop using conditions (Nested)
+Naming, Naming, Naming
+Exit Early, Exit Often 
+One way in, Two ways out (Try/Catch/Finally)
+How much of your code is scaffolding? And how much solves an actual problem?
+Speed is EVERYTHING!  (to create, enhance, debug, fix, and deploy - MAYBE execute)
+QA is monitoring
+Peer Programming and Peer Review is KING
+"Ownership" and identifying objects, services, etc.
+Minimum Viable Change vs Minimum Viable Product
+Rules promote Creative Solutions
+It's Good Writing, Not Good Math (Stephen King - On Writing)
+You need to learn to wear different hats (Engineer, Customer, Customer Service, Sales, etc.)
+Learn to read and rewrite code (you need to practice, practice, practice)
+Focus on consistency, not accuracy
+Write for the next guy (Challenge have a non-programmer read your code)
+Exceptions should be EXCEPTIONAL (defensive programming - check nulls, set defaults, etc.)
+Stop overloading functions?
+Don't pass in too many variables
+Don't make variable arguments (i.e. objects, use primitives instead)
+If your naming something with an "AND" your doing it wrong
+It's not YOUR code, stop taking it personally (it belongs to the customers, community, team, company, etc.)
+The UX of writing (language, code, etc.)
+Your going to refactor, rewrite, restructure - get over it
+Whats your goal, problem, reason, etc.  Understanding is KING.
+Walk away on a schedule.  Stay focused but do something else.
+Function and shape, then details.  Get it working FIRST, the rewrite once, then refactor.
+Simplify, Simplify, Simplify
+Build your own tools.  The Jedi Lightsaber of software development.
+How to decide: build vs buy
+Do what is hard - you'll get better faster
+
+Career Advice
+-------------
+Take Risks - Are they going to punch you?
+Change Jobs Early and Often
+Ask for reviews from someone you respect
+Look for good cultures (rather than good projects, languages, etc.)
+Showing up is everything
+Learn to promote your work
+Learn to promote your team
+Take pride in what you do
+Be as positive as you can. Come with solutions no problems.
+
+Challenges
+----------
+Non-Programmer
+Before and After
+Re-Write
+Re-Comment
+Different Language
+
+
+
+
+
+Backup from Old ideas
+---------------------
+Evolution: Apprentice, Programmer, Engineer, Architect ... the Poet
+Correct Action comes from Good Decision Making which is born from a strong Philosophy.
+The history of our profession is born from the material, but the result is art.
+
+You can tell who values your craft (suit).
+Learning comes from a desire to be better - not from experience or education alone.
+Love the process.
+Who am I? (the Media Elite)
+
+Getting it work is only the first step.  The Titanic worked - until it didn't.
+
+Strong Convictions, Weakly Held: Take a stand, be extreme, learn from the outcome.
+Casey's quote about error protocol.
+
+We'll talk about the practical, because I don't believe in theory crafting, but the things we learn together should be deeper than a single solution.
+
+Why on writing?  
+
+Education and Experience MATTER.  Education and Experience are meaningless without self reflection and feedback.  No one knows better than you do, but you don't know very much of everything there is to know. We're all in this together.
+
+Click Bait, Extremes, Warnings, etc.  Emotion is the fuel.  Making a strong statement and having a strong reaction to something propels the conversation.  Being inflexible is the problem.  It is my fondest wish that I will end up learning more from you than I already know.  It is my hope that I am extreme enough to get your attention and compel a conversation, but wise enough to change my mind when presented with reasonable evidence.
+
+Burnt: Consistency vs Sex
+
+You have to write.  You have to write every day.  You have to want this.
+
+Try/Catch is way over used.
+Logging is way over used.
+Unit testing and injection in strongly typed languages.
+Exit early and often.
+Comment your intent not what's happening.
+Exception throwing - do it and do it well by throwing exceptions to stop processing.  When to create a custom exception?
+Data - Operations KEEP them separate
+Length of methods
+Length of classes (single responsibility)
+Project organization
+Audit Fields (Created By, Modified By)
+Horizontal scrolling, code width etc.
+
+
+Salesforce:
+- Why a repository pattern? Bad architecture leads to bad testing
+- Example: because all tests natively integrate with triggers, and triggers act on objects, and objects must exist in an in memory repository, people build these insane test cases that have nothing to do with the data for their test.  i.e. Account -> Opportunity -> etc.
+- you can implement a simple interface/implementation (original repository) but you risk missing fields and constantly writing weird mock objects.
+
+
+
+
+Minimal Monday - Planning
+Tech Tuesday - Tech we love!
+Wicked Weds - Problems and Solutions (i.e. Speed of Enterprise, Change to Strange)
+Thirsty Thursday - Drinks with the "team" to talk about whatever
+Feature Friday - Show off something we've accomplished that we're proud of
+
+
+
+
+
+
+i thought of a possibly relevant topic for On Coding. one thing i took pains to do in my editor is to make jsdoc comment syntax highlighting be all grayscale
+this is something i almost never see other people do but i think it helps hugely with visually blocking out comments and code
+could tie into a larger discussion of developer/editor experience
+
+
