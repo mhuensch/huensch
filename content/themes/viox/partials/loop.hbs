@@ -1,0 +1,39 @@
+<div class="loop-wrap flex">
+    {{#foreach posts visibility="all"}}
+    <div class="loop-item flex text-center {{post_class}}{{#if feature_image}} has-image{{/if}}">
+        <article class="flex">
+            <a href="{{url}}" class="permalink" tabindex="-1"></a>
+            {{#if featured}}
+            <div class="featured-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>
+                {{t "featured"}}
+            </div>
+            {{/if}}
+            {{#if feature_image}}
+            <div class="post-thumbnail-wrap">
+                <img class="post-thumbnail" srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 600w,
+                                {{img_url feature_image size="l"}} 1000w,
+                                {{img_url feature_image size="xl"}} 2000w"
+                        sizes="(max-width: 347px) 300px,(max-width: 647px) 600px, (max-width: 1400px) 600px, 1000px"
+                        src="{{img_url feature_image size="s"}}" alt="{{title}}">
+            </div>
+            {{/if}}
+            <div class="post-inner">
+                {{#primary_tag}}
+                <div class="primary-tag">
+                    <a href="{{url}}">{{name}}</a>
+                </div>
+                {{/primary_tag}}
+                <h2 class="post-title">
+                    <a href="{{url}}">{{title}}</a>
+                </h2>
+                <div class="post-meta">
+                    <span class="author">{{t "By"}} {{#primary_author}}<a href="{{url}}">{{name}}</a>{{/primary_author}}</span>
+                    <time class="date" datetime="{{date format="YYYY-MM-DD hh:mm"}}">{{date format="DD MMMM, YYYY"}}</time>
+                </div>
+            </div>
+        </article>
+    </div>
+    {{/foreach}}
+</div>

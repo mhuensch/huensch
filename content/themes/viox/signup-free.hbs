@@ -1,0 +1,47 @@
+{{!< default}}
+
+<div class="site-content-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+                <div class="members-page-wrap">
+                    {{#if @member.paid}}
+
+                        {{!-- Logged in, paying member: Redirect home --}}
+                        <script>window.location = '{{@site.url}}/';</script>
+
+                    {{else if @member}}
+                        {{!-- Logged in, free member: Redirect signup --}}
+                        <script>window.location = '{{@site.url}}/signup/';</script>
+
+                    {{else}}
+                        {{!-- Not logged in:  free sign up--}}
+                        <div class="signup-form-wrap">
+                            <form class="signup-form" data-members-form="signup">
+                                <div class="text-center">
+                                    <h1 class="form-title">{{t "Sign up to"}} {{@site.title}} {{t "free plan"}}</h1>
+                                    <p class="form-subtitle">{{@site.description}}</p>
+                                </div>
+                                <div class="form-field-wrap flex">
+                                    <label for="email" class="sr-only">{{t "Email"}}</label>
+                                    <input data-members-email type="email" class="email" id="email" placeholder="Your email address" required/>
+                                    <button class="btn btn-primary btn-submit" type="submit">{{t "Continue"}}</button>
+                                </div>
+                                <div class="text-center">
+                                    <p><small>{{t "Already have an account?"}} <a href="{{@site.url}}/signin/">{{t "Sign in"}}</a></small></p>
+                                    <div class="message-success">
+                                        <span class="icon">{{> icons/success-symbol}}</span><strong>{{t "Great!"}}</strong> {{t "Check your inbox and click the link to confirm your subscription"}}
+                                    </div>
+                                    <div class="message-error">
+                                        <span class="icon">{{> icons/error-symbol}}</span><strong>{{t "Error!"}}</strong> {{t "Please enter a valid email address!"}}
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="social-links text-center">
+    {{#if @site.twitter}}
+    <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blanK" rel="noopener">{{> icons/twitter}}</a>
+    {{/if}}
+    {{#if @site.facebook}}
+    <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blanK" rel="noopener">{{> icons/facebook}}</a>
+    {{/if}}
+
+    {{!-- start custom social links icon --}}
+    <a href="#" title="Dribbble" target="_blanK" rel="noopener">{{> icons/dribbble}}</a>
+    <a href="#" title="Instagram" target="_blanK" rel="noopener">{{> icons/instagram}}</a>
+    <a href="#" title="Medium" target="_blanK" rel="noopener">{{> icons/medium}}</a>
+    {{!-- end custom social links icon --}}
+
+    <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS with Feedly" target="_blanK">{{> icons/rss}}</a>
+</div>

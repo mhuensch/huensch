@@ -1,0 +1,50 @@
+{{!--
+This error template is used for all 400/500 errors, except 404, which might occur on your site.
+It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
+You'll notice that we *don't* use any JavsScript, or ghost_head / ghost_foot in this file.
+--}}
+
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+	<head>
+		{{! Document Settings }}
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{{! Page Meta }}
+		<title>{{meta_title}}</title>
+		{{! Styles'n'Scripts }}
+		<link type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700%7CPlayfair+Display:400,700&display=swap" rel="stylesheet">
+		
+		<link href="{{asset "css/screen.css"}}" rel="stylesheet">
+<body>
+    <div class="site-content-wrap">
+        <div class="container">
+            <div class="inner-wrap">
+                <div class="error-wrap text-center">
+                    <h1 class="error-code">{{statusCode}}</h1>
+                    <p class="error-message">{{message}}</p>
+                    <a href="{{@site.url}}" class="btn btn-secondary back-btn">{{t "Return to home page"}}</a>
+                    {{#if errorDetails}}
+                        <section class="error-stack">
+                            <h3>Theme errors</h3>
+                            <ul class="error-stack-list">
+                                {{#foreach errorDetails}}
+                                    <li>
+                                        <em class="error-stack-function">{{{rule}}}</em>
+
+                                        {{#foreach failures}}
+                                            <p><span class="error-stack-file">Ref: {{ref}}</span></p>
+                                            <p><span class="error-stack-file">Message: {{message}}</span></p>
+                                        {{/foreach}}
+                                    </li>
+                                {{/foreach}}
+                            </ul>
+                        </section>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

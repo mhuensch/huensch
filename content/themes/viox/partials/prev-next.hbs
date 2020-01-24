@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col">
+        <div class="prev-next-wrap flex">
+            {{#next_post}}
+            <div class="flex {{post_class}}{{#if feature_image}} has-image{{/if}}">
+                <article class="flex">
+                    <a href="{{url}}" class="permalink"></a>
+                    {{#if feature_image}}
+                    <div class="post-thumbnail-wrap">
+                        <img class="post-thumbnail" src="{{img_url feature_image size="s"}}" alt="{{title}}">
+                    </div>
+                    {{/if}}
+                    <div class="post-inner">
+                        <div class="nav-text">{{t "Newer Article"}}</div>
+                        <h2 class="post-title h4">
+                            <a href="{{url}}">{{title}}</a>
+                        </h2>
+                    </div>
+                </article>
+            </div>
+            {{/next_post}}
+            {{#prev_post}}
+            <div class="flex {{post_class}}{{#if feature_image}} has-image{{/if}}">
+                <article class="flex">
+                    <a href="{{url}}" class="permalink"></a>
+                    {{#if feature_image}}
+                    <div class="post-thumbnail-wrap">
+                        <img class="post-thumbnail" src="{{img_url feature_image size="s"}}" alt="{{title}}">
+                    </div>
+                    {{/if}}
+                    <div class="post-inner">
+                        <div class="nav-text">{{t "Older Article"}}</div>
+                        <h2 class="post-title h4">
+                            <a href="{{url}}">{{title}}</a>
+                        </h2>
+                    </div>
+                </article>
+            </div>
+            {{/prev_post}}
+        </div>
+    </div>
+</div>

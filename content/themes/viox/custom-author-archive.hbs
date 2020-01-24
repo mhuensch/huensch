@@ -1,0 +1,81 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+<div class="site-content-wrap">
+{{#post}}
+{{#if feature_image}}
+<style>
+    .hero-content {
+        background-image: url({{feature_image}});
+    }
+</style>
+{{/if}}
+<div class="hero-content text-center single-post page {{post_class}}{{#if feature_image}} has-image{{/if}}">
+    <div class="container flex">
+        <div class="hero-content-inner">
+            <h1 class="intro-title">{{title}}</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="loop-wrap flex">
+                {{#get "authors" limit="all" include="count.posts" order="name asc"}}
+                {{#foreach authors}}
+                <div class="loop-item-one-three">
+                    <div class="author-card flex text-center{{#if cover_image}} has-image{{/if}}">
+                        <a href="{{url}}" class="permalink"></a>
+                        {{#if cover_image}}
+                        <div class="cover-image-wrap">
+                            <img class="tag-image" srcset="{{img_url cover_image size="s"}} 300w,
+                            {{img_url cover_image size="m"}} 600w,
+                            {{img_url cover_image size="l"}} 1000w,
+                            {{img_url cover_image size="xl"}} 2000w"
+                    sizes="(max-width: 347px) 300px,(max-width: 647px) 600px, (max-width: 1400px) 600px, 1000px"
+                    src="{{img_url cover_image size="s"}}" alt="Cover Image">
+                        </div>
+                        {{/if}}
+                        <div class="author-card-inner has-image">
+                            <div class="avatar-wrap">
+                                {{#if profile_image}}
+                                <img src="{{img_url profile_image size="s"}}" alt="name" class="avatar" role="presentation">
+                                {{else}}
+                                <div class="avatar no-image">{{> icons/user}}</div>
+                                {{/if}}
+                            </div>
+                            <h2 class="author-name h4">{{name}}</h2>
+                            <div class="post-count">{{plural count.posts empty=(t "0 Article") singular=(t "1 Article") plural=(t "% Articles")}}</div>
+                            <div class="meta-info">
+                                {{#if location}}
+                                <span class="location">
+                                    {{> icons/location}} {{location}}
+                                </span>
+                                {{/if}}
+                                {{#if twitter}}
+                                <a href="{{twitter_url}}" title="Twitter" rel="noopener">
+                                    {{> icons/twitter}}
+                                </a>
+                                {{/if}}
+                                {{#if facebook}}
+                                <a href="{{facebook_url}}" title="Facebook" rel="noopener">
+                                    {{> icons/facebook}}
+                                </a>
+                                {{/if}}
+                                {{#if website}}
+                                <a href="{{website}}" title="Website" rel="noopener">
+                                    {{> icons/link}}
+                                </a>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/post}}
+</div>
+{{> widget-subscribe}}

@@ -1,0 +1,26 @@
+<header class="site-header flex">
+    <div class="container flex header-inner">
+        <div class="logo">
+            {{#if @site.logo}}
+                <a href="{{@site.url}}" id="logo"><img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}"></a>
+            {{else}}
+                <a href="{{@site.url}}" class="logo-text" id="logo">{{@site.title}}</a>
+            {{/if}}
+        </div>
+        <div class="header-right flex">
+            {{navigation}}
+            <a class="search-icon js-search-button" id="search-btn" tabindex="0" role="button" aria-label="Open search">
+                {{> icons/search}}
+            </a>
+            <div class="menu-icon" id="menu-toggle">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
+        <div class="mobile-nav-wrap" id="mobile-nav">
+            {{navigation}}
+        </div>
+        <div class="backdrop" id="backdrop"></div>
+    </div>
+</header>

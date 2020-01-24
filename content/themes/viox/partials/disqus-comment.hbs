@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col">
+        <div class="comment-wrap">
+            <div class="comment-container">
+                <div class="text-center">
+                    <button type="button" class="btn btn-secondary comment-btn" onclick="LoadComments();return false;" id="show-comments">{{t "Show Comment"}}</button>
+                </div>
+                
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_shortname = 'example'; //replace "example" with your own shortname
+                    var disqus_loaded = false;
+                    var disqus_config = function () {
+                        this.page.url = "{{url absolute="true"}}";  
+                        this.page.identifier = "ghost-{{comment_id}}"
+                    };
+                    var cmtBtn = document.querySelector('#show-comments');
+                    var cmtCntr = document.querySelector('#disqus_thread');
+                    function LoadComments() {
+                        cmtBtn.classList.add('loading');
+                        if (!disqus_loaded)  {
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        }
+                        var timerId = setInterval(function() {
+                            if(cmtCntr.innerHTML != '') {
+                                cmtBtn.style.opacity = '0';
+                                cmtBtn.style.display = 'none';
+                                clearInterval(timerId);
+                            }
+                        }, 600);
+                    }
+                    //Opens comments when linked to directly
+                    var hash = window.location.hash.substr(1);
+                    if (hash.length > 8) {
+                        if (hash.substring(0, 8) == "comment-") {
+                            LoadComments();
+                        }
+                    }
+                    //Remove this if you don't want to load comments for search engines
+                    if(/bot|google|baidu|bing|msn|duckduckgo|slurp|yandex/i.test(navigator.userAgent)) {
+                    LoadComments();
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>

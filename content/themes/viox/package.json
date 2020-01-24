@@ -1,0 +1,71 @@
+{
+    "name": "viox",
+    "description": "Minimal personal blog theme",
+    "demo": "http://viox.gbjsolution.com",
+    "version": "1.0.2",
+    "engines": {
+        "ghost": ">=3.0.0",
+        "ghost-api": "v3"
+    },
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "GBJ solution",
+        "email": "gbjsolution@gmail.com",
+        "url": "https://gbjsolution.com"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Personal Blogs",
+            "Magazine Layouts"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "personal",
+        "minimal"
+    ],
+    "config": {
+        "posts_per_page": 10,
+        "image_sizes": {
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1000
+            },
+            "xl": {
+                "width": 2000
+            }
+        }
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.6.0",
+        "browser-sync": "^2.26.7",
+        "del": "^4.1.1",
+        "gulp": "^4.0.2",
+        "gulp-clean-css": "^4.2.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-uglify": "^3.0.2",
+        "gulp-wait": "0.0.2",
+        "gulp-zip": "^5.0.0",
+        "merge2": "^1.2.3",
+        "postcss-css-variables": "^0.13.0"
+    },
+    "dependencies": {
+        "gulp-sourcemaps": "^2.6.5",
+        "reframe.js": "^2.2.5"
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+	<head>
+		{{! Document Settings }}
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{{! Page Meta }}
+		<title>{{meta_title}}</title>
+		{{! Styles'n'Scripts }}
+		<link type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700%7CLora:400,700&display=swap" rel="stylesheet">
+		
+		<link href="{{asset "css/screen.css"}}" rel="stylesheet">
+		{{! Ghost outputs important style and meta data with this tag }}
+		{{ghost_head}}
+	</head>
+	<body class="{{body_class}}">
+		<div class="site-wrap">
+		{{! insert header partial}}
+		{{> header}}
+        {{{body}}}
+        {{! insert footer partial}}
+        {{> footer}}
+		{{> members/notifications}}
+		{{> search-popup}}
+		{{> back-to-top}}
+		{{! scripts}}
+		</div>
+		
+        <script>
+			var searchUrl = '{{@site.url}}/ghost/api/v3/content/posts/?key={{>api-key}}&limit=all&fields=id,title,excerpt,custom_excerpt,url,published_at&formats=plaintext';
+            var nextPage = '{{pagination.next}}';
+            var totalPages = '{{pagination.pages}}';
+			var loadingText ='{{t "Loading..."}}';
+        </script>
+		<script src="{{asset "js/app.bundle.min.js"}}"></script>
+        {{ghost_foot}}
+	</body>
+</html>

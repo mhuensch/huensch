@@ -1,0 +1,24 @@
+<nav class="nav-wrap">
+    <ul class="nav-list">
+        {{#foreach navigation}}
+        <li class="nav-item {{slug}}{{#if current}} nav-item-current{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+        {{/foreach}}
+        {{#if @labs.members}}
+        {{#if @member}}
+        <li class="nav-item member-link">
+            <a class="btn btn-sm" href="/account/">{{t "Account"}}</a>
+        </li>
+        <li class="nav-item member-link">
+            <a class="btn btn-sm" href="#signout" data-members-signout>{{t "Sign out"}}</a>
+        </li>
+        {{else}}
+        <li class="nav-item member-link">
+            <a class="btn btn-sm" href="/signin/">{{t "Sign in"}}</a>
+        </li>
+        <li class="nav-item member-link">
+            <a class="btn btn-sm btn-secondary" href="/signup/">{{t "Subscribe"}}</a>
+        </li>
+        {{/if}}
+        {{/if}}
+    </ul>
+</nav>

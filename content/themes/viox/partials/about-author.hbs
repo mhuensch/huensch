@@ -1,0 +1,23 @@
+<div class="about-author-section">
+    <div class="section-title h4 text-center">{{#has author="count:>1"}}{{t "This article was collaboration between:"}}{{else}}{{t "This article was written by:"}}{{/has}}</div>
+    <div class="about-author-wrap">
+        {{#foreach authors}}
+        <div class="about-author flex">
+            {{#if profile_image}}
+                <a href="{{url}}" title="{{name}}" class="flex"><img src="{{profile_image}}" alt="Author image" class="avatar"></a>
+                {{else}}
+                <a href="{{url}}" title="{{name}}" class="flex"><div class="avatar no-image text-center">{{> icons/user}}</div></a>
+            {{/if}}
+            <div class="author-info">
+                <h3 class="name h4"><a href="{{url}}">{{name}}</a></h3>
+                {{#if bio}}
+                <div class="bio">
+                    {{{bio}}}
+                </div>
+                {{/if}}
+                <div class="permalink"><a href="{{url}}">{{t "Read all post by"}} {{name}}</a></div>
+            </div>
+        </div>
+        {{/foreach}}
+    </div>
+</div>

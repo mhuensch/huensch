@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col">
+        <div class="share-wrap clearfix text-center">
+            <div class="share-text h4">{{t "Share this article:"}}</div>
+            <ul class="share-links flex">
+                <!-- facebook -->
+                <li>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="{{t "Share on Facebook"}}">{{> icons/facebook}}</a>
+                </li>
+                <!-- twitter -->
+                <li>
+                    <a class="twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=580,height=296');return false;" title="{{t "Share on Twitter"}}">{{> icons/twitter}}</a>
+                </li>
+                <!-- linkedin -->
+                <li>
+                    <a class="linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}&amp;title={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=580,height=296');return false;" title="{{t "Share on Linkedin"}}">{{> icons/linkedin}}</a>
+                </li>
+                <!-- pinterest -->
+                <li>
+                    <a class="pinterest" href="http://pinterest.com/pin/create/button/?url={{url absolute="true"}}&amp;description={{encode title}}" onclick="window.open(this.href, 'linkedin-share', 'width=580,height=296');return false;" title="{{t "Share on Pinterest"}}">{{> icons/pinterest}}</a>
+                </li>
+                <li>
+                    <a class="link js-copy-link" href="#"  onclick="return false;" data-clipboard-text="{{url absolute="true"}}" title="{{t "Copy the permalink"}}" rel="noopener">{{> icons/link}}</a>
+                </li>
+            </ul>
+            <div id="copy-alert" class="copy-alert">{{t "Link copied to clipboard."}}</div>
+        </div>
+    </div>
+</div>

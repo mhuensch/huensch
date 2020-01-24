@@ -1,0 +1,40 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+<div class="site-content-wrap">
+{{#tag}}
+{{#if feature_image}}
+<style>
+    .hero-content {
+        background-image: url({{feature_image}});
+    }
+</style>
+{{/if}}
+<!-- has-image -->
+<div class="hero-content text-center single-post{{#if feature_image}} has-image{{/if}}">
+    <div class="container flex">
+        <div class="hero-content-inner">
+            <h1 class="intro-title">{{name}}</h1>
+            <div class="intro-description">
+                <div class="post-count">
+                    <span>{{plural ../pagination.total empty=(t "0 Article") singular=(t "1 Article") plural=(t "% Articles")}}</span>
+                </div>
+                {{#if description}}
+                <div class="description">
+                    {{description}}
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/tag}}
+<div class="container">
+    <div class="row">
+        <div class="col col-12">
+            {{> loop}}
+        </div>
+    </div>
+    {{pagination}}
+</div>
+</div>
+{{> widget-subscribe}}

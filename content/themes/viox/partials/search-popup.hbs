@@ -1,0 +1,18 @@
+
+<div class="search-popup js-search-popup">
+    <div class="search-popup-bg"></div>
+	<div class="close-button" id="search-close" tabindex="1" role="button" aria-label="Close search">
+		{{> icons/close}}
+	</div>
+	<div class="popup-inner">
+        <div class="inner-container">
+            <form id="search-form">
+                <input type="text" class="search-input" placeholder="{{t "Type to search"}}" id="search-input" aria-label="Type to search" role="searchbox">
+                <div class="icon-wrap">
+                    {{> icons/search}}
+                </div>
+            </form>
+            <div class="search-result" id="search-results"></div>
+        </div>
+	</div>
+</div>

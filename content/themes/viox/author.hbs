@@ -1,0 +1,72 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+<div class="site-content-wrap">
+    {{#author}}
+    {{#if cover_image}}
+    <style>
+        .hero-content {
+            background-image: url({{cover_image}});
+        }
+    </style>
+    {{/if}}
+    <div class="hero-content text-center single-post{{#if cover_image}} has-image{{/if}}">
+        <div class="container flex">
+            <div class="hero-content-inner">
+                {{#if profile_image}}
+                <div class="avarat-wrap">
+                    <img src="{{img_url profile_image size="s"}}" alt="{{name}}" class="avatar clearfix"
+                        role="presentation">
+                </div>
+                {{else}}
+                <div class="avatar no-image">{{> icons/user}}</div>
+                {{/if}}
+                <h1 class="intro-title author-name">{{name}}</h1>
+                <div class="intro-description">
+                    <div class="post-count">
+                        <span>{{plural ../pagination.total empty=(t "0 Article") singular=(t "1 Article") plural=(t "% Articles")}}</span>
+                    </div>
+                    {{#if bio}}
+                    <div class="bio">
+                        {{bio}}
+                    </div>
+                    {{/if}}
+                    <div class="meta-info">
+                        {{#if location}}
+                        <span class="location">
+                            {{> icons/location}} {{location}}
+                        </span>
+                        {{/if}}
+                        {{#if twitter}}
+                        <a href="{{twitter_url}}" title="Twitter" target="_blanK" rel="noopener">
+                            {{> icons/twitter}}
+                        </a>
+                        {{/if}}
+                        {{#if facebook}}
+                        <a href="{{facebook_url}}" title="Facebook" target="_blanK" rel="noopener">
+                            {{> icons/facebook}}
+                        </a>
+                        {{/if}}
+                        {{#if website}}
+                        <a href="{{website}}" title="Website" target="_blanK" rel="noopener">
+                            {{> icons/link}}
+                        </a>
+                        {{/if }}
+                        <a href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/" title="RSS with Feedly" target="_blanK" rel="noopener">
+                            {{> icons/rss}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/author }}
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+                {{> loop}}
+            </div>
+        </div>
+        {{pagination}}
+    </div>
+</div>
+{{> widget-subscribe}}
