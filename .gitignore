@@ -9,3 +9,4 @@
 .sublime-project
 .DS_Store
 /build/settings*.sh
+/content/logs
